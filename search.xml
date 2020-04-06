@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>linux系统编译bernese软件</title>
-    <url>/geoyxd/2020/03/09/install-bernese-on-linux/</url>
+    <url>/2020/03/09/install-bernese-on-linux/</url>
     <content><![CDATA[<p>安装bernese5.2遇到两个坑<br>一、Qt的安装<br>二、bernese的按装</p>
 <a id="more"></a>
 <h2 id="1编译平台"><a href="#1编译平台" class="headerlink" title="1编译平台"></a>1编译平台</h2><ul>
@@ -101,7 +101,7 @@
   </entry>
   <entry>
     <title>我的2019</title>
-    <url>/geoyxd/2019/12/21/my_2019/</url>
+    <url>/2019/12/21/my_2019/</url>
     <content><![CDATA[<hr>
 <p>2019</p>
 <a id="more"></a>
@@ -117,7 +117,7 @@
   </entry>
   <entry>
     <title>GAMIT软件安装</title>
-    <url>/geoyxd/2019/10/21/gamit-install/</url>
+    <url>/2019/10/21/gamit-install/</url>
     <content><![CDATA[<p>在Elementary OS 5 Juno是基于最新版本的Ubuntu，其平台上安装gamit无法成功，是gcc、gFortran版本太高的原因，解决方式如下：</p>
 <a id="more"></a>
 <h2 id="出现错误"><a href="#出现错误" class="headerlink" title="出现错误"></a>出现错误</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">internal compiler error: 段错误</span><br><span class="line">Please submit a full bug report,</span><br><span class="line">with preprocessed source if appropriate.</span><br><span class="line">See &lt;file:///usr/share/doc/gcc-7/README.Bugs&gt; for instructions.</span><br><span class="line">Makefile:280: recipe for target &apos;yawtab_lib.a(kouba_yaw.o)&apos; failed</span><br><span class="line">make: *** [yawtab_lib.a(kouba_yaw.o)] Error 1</span><br><span class="line">Failure in make_gamit -- install_software terminated</span><br></pre></td></tr></table></figure>
@@ -132,13 +132,13 @@
         <category>GNSS - GAMIT</category>
       </categories>
       <tags>
-        <tag>Test</tag>
         <tag>gamit</tag>
+        <tag>Test</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/geoyxd/2019/08/25/hello-world/</url>
+    <url>/2019/08/25/hello-world/</url>
     <content><![CDATA[<p>Hello World ！！！</p>
 <p>geoyxd.site终于诞生了<br>期间用过蚂蚁笔记的博客<br>简书、微信公众号<br>体验都不是很好</p>
 <p>geoyxd.site域名买了10年<br>致力于分享测绘技术、相关软件、编程语言</p>
@@ -148,13 +148,13 @@
         <category>胡言乱语 - 搭建博客</category>
       </categories>
       <tags>
-        <tag>搭建博客</tag>
         <tag>Test</tag>
+        <tag>搭建博客</tag>
       </tags>
   </entry>
   <entry>
     <title>关于</title>
-    <url>/geoyxd/2019/08/21/%E5%85%B3%E4%BA%8E/</url>
+    <url>/2019/08/21/%E5%85%B3%E4%BA%8E/</url>
     <content><![CDATA[]]></content>
       <tags>
         <tag>关于</tag>
