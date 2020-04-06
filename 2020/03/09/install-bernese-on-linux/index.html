@@ -67,12 +67,6 @@
 		<!-- motto -->
 		<div class="h-body">	
 			
-				<div class="motto text-shadow-pop-left">
-					<p class="content" id="motto-content">获取中...</p>
-					<p>-<p>
-					<p class="author" id="motto-author">Just a minute...</p>
-				</div>
-			
 		</div>
 		
 		<!-- others: such as time... -->			
@@ -513,9 +507,16 @@ geoyxd.site域名买了10年致力于分享测绘技术、相关软件、编程�
 					<div class="layout-comment">
 
 	
-		<div class="config-info">
-			Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
-		</div>	
+
+		
+
+			<!-- I don't know !!!-->
+			<div class="config-info">
+				Please check the parameter of <b>comment</b> in config.yml of hexo-theme-Annie!
+			</div>
+			
+		
+		
 	
 
 </div>
@@ -713,7 +714,7 @@ geoyxd.site域名买了10年致力于分享测绘技术、相关软件、编程�
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
+				&copy;2017 - 2020, content by GeoPlus. All Rights Reserved.
 			
 			
 				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
@@ -733,35 +734,6 @@ geoyxd.site域名买了10年致力于分享测绘技术、相关软件、编程�
 	</div>		
 </footer>
 		
-	<!-- Local or hitokoto! -->
- 
-	<!-- 现代写法，推荐 -->
-	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<!--End-->
-	<script>
-		(function motto(){
-			fetch('https://v1.hitokoto.cn/?c=d')
-				.then(function (res){
-				return res.json();
-			}).then(function (data) {
-				$("#motto-content").html( data.hitokoto?data.hitokoto:'请刷新...' );
-				
-				let	mottoAuthor =' ';
-					mottoAuthor += data.creator?data.creator:'一言';
-					mottoAuthor += "　/　";
-					mottoAuthor += data.from?data.from:'一言官网';
-					
-				$("#motto-author").html( mottoAuthor );
-			})
-			.catch(function (err) {
-				console.error(err);
-			})			
-		})();
-	</script>
-
-
 
 <!-- love effect -->
 
