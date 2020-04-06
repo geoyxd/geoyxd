@@ -1,227 +1,125 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> geo++</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="想要收获自由之果的人，必须承受维护自由的劳苦。"><meta name="keywords"><meta name="author" content="geoplus"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://geoplus.ltd/atom.xml" title="geo++"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div class="archive"><h2 class="archive-year">2019</h2><div class="post-item"><div class="post-info">10-21</div><a href="/2019/10/21/gamit-install/" class="post-title-link">GAMIT软件安装</a></div><div class="post-item"><div class="post-info">08-25</div><a href="/2019/08/25/hello-world/" class="post-title-link">Hello World</a></div></div><div class="right-container"><div class="widget"><div class="category"><h4>分类归档</h4><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GNSS-BERNESE/">GNSS - BERNESE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNSS-GAMIT/">GNSS - GAMIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/胡言乱语/">胡言乱语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/胡言乱语-搭建博客/">胡言乱语 - 搭建博客</a><span class="category-list-count">1</span></li></ul></div></div><div class="widget"><div class="tagcloud"><h4>标签云</h4><a href="/tags/Test/" style="font-size: 20px;">Test</a> <a href="/tags/bernese/" style="font-size: 10px;">bernese</a> <a href="/tags/gamit/" style="font-size: 10px;">gamit</a> <a href="/tags/关于/" style="font-size: 10px;">关于</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a> <a href="/tags/胡言乱语/" style="font-size: 10px;">胡言乱语</a></div></div><div class="widget"><div class="recent"><h4>最近文章</h4><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/install-bernese-on-linux/">linux系统编译bernese软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/21/my_2019/">我的2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/gamit-install/">GAMIT软件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/25/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/关于/">关于</a></li></ul></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"></div><div class="copyright"><p>© 2016 - 2020 <a target="_blank">geoplus</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz", "FdzS5SOPHdhYQoEUngQ8K2QW");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
 
-<!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
 
-  <!--Description-->
-  
-  <meta name="description" content="想要收获自由之果的人，必须承受维护自由的劳苦。">
-  
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
 
-  <!--Author-->
-  
-  <meta name="author" content="geoplus">
-  
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
 
-  <!--Open Graph Title-->
-  
-      <meta property="og:title" content="geo++">
-  
-  <!--Open Graph Description-->
-  
-      <meta property="og:description" content="想要收获自由之果的人，必须承受维护自由的劳苦。">
-  
-  <!--Open Graph Site Name-->
-  <meta property="og:site_name" content="geo++">
-  <!--Type page-->
-  
-      <meta property="og:type" content="website">
-  
-  <!--Page Cover-->
-  
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- 百度统计 -->
-    <script>
-	var _hmt = _hmt || [];
-	(function() {
-  	var hm = document.createElement("script");
-  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
-  	var s = document.getElementsByTagName("script")[0]; 
-  	s.parentNode.insertBefore(hm, s);
-	})();
-    </script>
-  <!-- Title -->
-  
-  <title>Test - geo++</title>
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
 
+const calcAndWriteTimes = () => {
+let isPost = false;
 
-  <link rel="shortcut icon" href="/favicon.ico">
-    <!--font-awesome-->
-  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Custom CSS/Sass -->
-  <link rel="stylesheet" href="/css/style.css">
+let timerAllDOM = document.querySelectorAll(".article-timer");
 
-</head>
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
 
+let timerDOMCache = {};
 
-<body>
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
 
-  <!-- Nav -->
-  <header class="site-header">
-  <div class="header-inside">
-    
-    <div class="logo">
-      <a href="/" rel="home">
-        
-        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="geo++" height="60">
-        
-      </a>
-    </div>
-    <a class="header-name" href="/">
-            <span>geo++</span>
-            的部落宅
-        </a>
-    <!-- navbar -->
-    <nav class="navbar">
-      <!--  nav links -->
-      <div class="collapse">
-        <ul class="navbar-nav">
-          
-          
-            <li>
-              <a href="/.">
-                
-                  <i class="fa fa-home "></i>
-                
-                首页
-              </a>
-            </li>
-          
-            <li>
-              <a href="/archives">
-                
-                  <i class="fa fa-archive "></i>
-                
-                归档
-              </a>
-            </li>
-          
-            <li>
-              <a href="/about">
-                
-                  <i class="fa fa-user "></i>
-                
-                关于
-              </a>
-            </li>
-          
-            <li>
-              <a href="/project">
-                
-                  <i class="fa fa-folder-open "></i>
-                
-                项目
-              </a>
-            </li>
-          
-            <li>
-              <a href="/photo">
-                
-                  <i class="fa fa-photo "></i>
-                
-                相册
-              </a>
-            </li>
-          
-            <li>
-              <a href="/guestbook">
-                
-                  <i class="fa fa-edit "></i>
-                
-                留言
-              </a>
-            </li>
-          
-            <li>
-              <a href="/atom.xml">
-                
-                  <i class="fa fa-send "></i>
-                
-                RSS
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </nav>
-    <div class="button-wrap">
-      <button class="menu-toggle">Primary Menu</button>
-    </div>
-  </div>
-</header>
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
 
-
-  <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">#Test</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-        
-        
-          <h2 class="year">2019</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2019-10-21
-    </span>
-    <a href="/2019/10/21/gamit-install/" class="title">
-      GAMIT软件安装
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-08-25
-    </span>
-    <a href="/2019/08/25/hello-world/" class="title">
-      Hello World
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
-    </div>
-  </div>
-  
-
-</div>
-
-
-  <!-- Footer -->
-  <!-- Footer -->
-<footer class="site-info">
-  <p>
-    <span>geo++ &copy; 2020</span>
-    
-      <span class="split">|</span>
-      <span>th是个小屁孩的技术小屋</span>
-    
-  </p>
-  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  本站访客数<span id="busuanzi_value_site_uv"></span>人次
-</footer>
-
-
-  <!-- After footer scripts -->
-  <!-- scripts -->
-<script src="/js/app.js"></script>
-
-
-
-</body>
-
-</html>
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
