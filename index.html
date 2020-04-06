@@ -1,240 +1,126 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>geo++</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
-</head>
-<body>
-<header class="header">
-    <div class="header-inner">
-        <div class="header-title">
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> geo++</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="想要收获自由之果的人，必须承受维护自由的劳苦。"><meta name="keywords"><meta name="author" content="geoplus"><link rel="short icon" href="/images/favicon.ico"><link rel="stylesheet" href="/css/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://geoplus.ltd/atom.xml" title="geo++"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script></head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2020/03/09/install-bernese-on-linux/" class="post-title-link">linux系统编译bernese软件</a></h2><div class="post-info">2020-03-09<p class="visit"><i data-identity="2020/03/09/install-bernese-on-linux/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>安装bernese5.2遇到两个坑<br>一、Qt的安装<br>二、bernese的按装</p></div><a href="/2020/03/09/install-bernese-on-linux/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2019/12/21/my_2019/" class="post-title-link">我的2019</a></h2><div class="post-info">2019-12-21<p class="visit"><i data-identity="2019/12/21/my_2019/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><hr>
+<p>2019</p></div><a href="/2019/12/21/my_2019/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2019/10/21/gamit-install/" class="post-title-link">GAMIT软件安装</a></h2><div class="post-info">2019-10-21<p class="visit"><i data-identity="2019/10/21/gamit-install/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"><p>在Elementary OS 5 Juno是基于最新版本的Ubuntu，其平台上安装gamit无法成功，是gcc、gFortran版本太高的原因，解决方式如下：</p></div><a href="/2019/10/21/gamit-install/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2019/08/25/hello-world/" class="post-title-link">Hello World</a></h2><div class="post-info">2019-08-25<p class="visit"><i data-identity="2019/08/25/hello-world/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"></div><a href="/2019/08/25/hello-world/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2019/08/21/关于/" class="post-title-link">关于</a></h2><div class="post-info">2019-08-21<p class="visit"><i data-identity="2019/08/21/关于/" class="article-timer"></i><span>次访问</span></p></div><div class="post-content"></div><a href="/2019/08/21/关于/" class="read-more">...more</a></article></li></ul><div class="right-container"><div class="widget"><div class="category"><h4>分类归档</h4><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GNSS-BERNESE/">GNSS - BERNESE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GNSS-GAMIT/">GNSS - GAMIT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/胡言乱语/">胡言乱语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/胡言乱语-搭建博客/">胡言乱语 - 搭建博客</a><span class="category-list-count">1</span></li></ul></div></div><div class="widget"><div class="tagcloud"><h4>标签云</h4><a href="/tags/Test/" style="font-size: 20px;">Test</a> <a href="/tags/bernese/" style="font-size: 10px;">bernese</a> <a href="/tags/gamit/" style="font-size: 10px;">gamit</a> <a href="/tags/关于/" style="font-size: 10px;">关于</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a> <a href="/tags/胡言乱语/" style="font-size: 10px;">胡言乱语</a></div></div><div class="widget"><div class="recent"><h4>最近文章</h4><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/install-bernese-on-linux/">linux系统编译bernese软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/21/my_2019/">我的2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/gamit-install/">GAMIT软件安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/25/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/关于/">关于</a></li></ul></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"></div><div class="copyright"><p>© 2016 - 2020 <a target="_blank">geoplus</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="/scripts/jquery-1.8.2.min.js"></script><script src="/scripts/ar-anchor.js"></script><script src="/scripts/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>const valineAPI = (() => {
+try {
+    AV.init("aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz", "FdzS5SOPHdhYQoEUngQ8K2QW");
+} catch(error) {}
+const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+    query.equalTo("identity", identity);
+    query.find().then(results => {
+        resolve(results.length > 0);
+    }, error => reject(error));
+    })
+}
 
-        </div>
-        <nav class="header-nav">
-            
-            <a href="/" class="header-nav-link" >
-                首页
-            </a>
-            
+const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+    let querys = [];
+    for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+    }
+    query = AV.Query.or.apply(null ,querys);
+    } else {
+    identity = identity || getRealPath();
+    query = new AV.Query("Timer");
+    query.equalTo("identity", identity);
+    }
 
-            
-            <a href="/archives" class="header-nav-link">
-                归档
-            </a>
-            
+    return new Promise((resolve, reject) => {
+    query.find()
+    .then(results => resolve(results))
+    .catch(error => reject(error))
+    })
+}
 
-            
-            <a href="/tags" class="header-nav-link">
-                标签
-            </a>
-            
+const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let Todo = AV.Object.extend('Timer');
+    let todo = new Todo();
+    todo.set("times", 1);
+    todo.set("identity", identity);
+    todo.save().then(res => resolve(true), error => reject(error));
+    })
+}
 
-            
-        </nav>
-    </div>
-</header>
-<header class="mobile-header">
-    <div class="mobile-nav">
-        <div class="mobile-nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-nav-title">
-            <a href="/" class="mobile-nav-title-link">geoplus's Blog</a>
-        </div>
+const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+    let query = new AV.Query('Timer');
+    query.equalTo("identity", identity);
+    query.find().then(todos => {
+        todos.forEach(todo => {
+        todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+    }).then(todos => resolve(true), error => reject(error));
+    })
+}
 
-    </div>
-    <nav class="mobile-menu">
-        <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">首页</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">归档</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">标签</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">关于</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div class="main">
-    <div class="content-inner">
-        <div class="posts">
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2020/03/09/install-bernese-on-linux/">linux系统编译bernese软件</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2020-03-09</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/GNSS-BERNESE/">GNSS - BERNESE</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <p>安装bernese5.2遇到两个坑<br>一、Qt的安装<br>二、bernese的按装</p>
-                    <div class="read-more">
-                        <a href="/2020/03/09/install-bernese-on-linux/" class="read-more-link">
-                            阅读全文
-                            <i class="iconfont icon-readmore"></i>
-                        </a>
-                    </div>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/12/21/my_2019/">我的2019</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-12-21</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/胡言乱语/">胡言乱语</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <hr>
-<p>2019</p>
-                    <div class="read-more">
-                        <a href="/2019/12/21/my_2019/" class="read-more-link">
-                            阅读全文
-                            <i class="iconfont icon-readmore"></i>
-                        </a>
-                    </div>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/10/21/gamit-install/">GAMIT软件安装</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-10-21</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/GNSS-GAMIT/">GNSS - GAMIT</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <p>在Elementary OS 5 Juno是基于最新版本的Ubuntu，其平台上安装gamit无法成功，是gcc、gFortran版本太高的原因，解决方式如下：</p>
-                    <div class="read-more">
-                        <a href="/2019/10/21/gamit-install/" class="read-more-link">
-                            阅读全文
-                            <i class="iconfont icon-readmore"></i>
-                        </a>
-                    </div>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/08/25/hello-world/">Hello World</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-08-25</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/胡言乱语-搭建博客/">胡言乱语 - 搭建博客</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <p>Hello World ！！！</p>
-<p>geoyxd.site终于诞生了<br>期间用过蚂蚁笔记的博客<br>简书、微信公众号<br>体验都不是很好</p>
-<p>geoyxd.site域名买了10年<br>致力于分享测绘技术、相关软件、编程语言</p>
-<p>欢迎关注本博客<br>欢迎向本博客投稿</p>
+return {
+    isExist,
+    _get,
+    update,
+    create
+}
+})()
 
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/08/21/关于/">关于</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-08-21</span>
-                
-            </div>
-            <div class="post-content">
-                
-                    
-                
-            </div>
-        </article>
-    
-</div>
-<div class="paginator">
-    
-        
-        
-    
-</div>
+const calcAndWriteTimes = () => {
+let isPost = false;
 
-    </div>
-</div>
-<footer class="footer-social">
-    
+let timerAllDOM = document.querySelectorAll(".article-timer");
 
-    
+if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+    if(exist) {
+        return valineAPI.update(identity);
+    }
+    return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+}
 
-    
+let timerDOMCache = {};
 
-    <div class="footer-copyright">
-        <p class="time-line">
-            &copy;
-            
-            
-            2020
-            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
-            <a target="_blank" href="https://github.com/iJinxin">geoplus</a>
-        </p>
-        <p class="theme-info">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
-            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
-        </p>
-    </div>
-</footer>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    
+for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+    timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+    timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+    };
+    }
+}
 
-</script>
-</html>
+let identities = Object.keys(timerDOMCache);
+valineAPI._get(identities).then(results => {
+    for(let result of results) {
+    let {identity, times} = result.attributes;
+    timerDOMCache[identity].times = times;
+    timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+    if(timerDOMCache[identity].times){
+        continue;
+    }
+    timerDOMCache[identity].dom.map(item => item.innerText = 1);
+    valineAPI.create(identity);
+    }
+}).catch(error => console.log(error.message))
+}
+
+if(true){
+calcAndWriteTimes();
+}</script></body></html>
