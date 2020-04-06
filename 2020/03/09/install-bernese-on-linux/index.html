@@ -1,0 +1,270 @@
+<html>
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+
+  
+  <title>
+    linux系统编译bernese软件 |
+    geo++
+  </title>
+  
+
+
+  <meta name="description" content="想要收获自由之果的人，必须承受维护自由的劳苦。">
+  <meta name="author" content="geoplus">
+  <meta property="og:title" content="linux系统编译bernese软件">
+  <meta property="og:description" content="想要收获自由之果的人，必须承受维护自由的劳苦。">
+  <meta property="og:site_name" content="geo++">
+  <meta property="og:image" content="http://geoplus.ltd/img/default.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="想要收获自由之果的人，必须承受维护自由的劳苦。">
+  <meta name="twitter:title" content="linux系统编译bernese软件">
+
+  <meta name="twitter:image" content="http://geoplus.ltd/img/default.jpg">
+
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark page-navbar gradient">
+  <div class="container">
+    <a class="navbar-brand logo" href="http://geoplus.ltd">
+      geo++</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item item">
+          
+        <li class="nav-item item">
+          <a class="nav-link" href="/">
+            Home</a>
+        </li>
+        
+        <li class="nav-item item">
+          <a class="nav-link" href="/archives">
+            🗂️Archives</a>
+        </li>
+        
+        <li class="nav-item item">
+          <a class="nav-link" href="https://hexo.io/">
+            Hexo</a>
+        </li>
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <main class="page main-page">
+        <div class="container blogPost">
+    <div class="row">
+        <div class="col-sm-9 px-md-5">
+            <h2 class="blog-post-title">
+                linux系统编译bernese软件
+            </h2>
+            <p class="meta">
+                <i class="far fa-clock"></i>
+                2020-03-09 
+
+<a href="/categories/GNSS-BERNESE/"><i class="far fa-folder-open"></i>
+    GNSS - BERNESE </a>
+
+            </p>
+            <!-- Content -->
+            <p>安装bernese5.2遇到两个坑<br>一、Qt的安装<br>二、bernese的按装</p>
+<a id="more"></a>
+<h2 id="1编译平台"><a href="#1编译平台" class="headerlink" title="1编译平台"></a>1编译平台</h2><ul>
+<li>1 Ubuntu18.04</li>
+<li>2 bernese5.2<h2 id="2依赖库"><a href="#2依赖库" class="headerlink" title="2依赖库"></a>2依赖库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install libx11-dev </span><br><span class="line">$ sudo apt install libxext-dev </span><br><span class="line">$ sudo apt install libxtst-dev </span><br><span class="line">$ sudo apt install zlib1g-dev</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="安装-软件"><a href="#安装-软件" class="headerlink" title="安装 软件"></a>安装 软件</h2><h3 id="1-qt"><a href="#1-qt" class="headerlink" title="1 qt"></a>1 qt</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a><a href="http://download.qt.io/archive/qt/" target="_blank" rel="noopener">下载</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz</span><br><span class="line">$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4</span><br><span class="line">$ sudo make                                                            </span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+
+<h4 id="QT编译失败，编译器参数设置不对，应该加上：-std-gnu-98-参数"><a href="#QT编译失败，编译器参数设置不对，应该加上：-std-gnu-98-参数" class="headerlink" title="QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数"></a>QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数</h4><p>在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:</p>
+<p><img src="en-resource://database/434:1" alt="406f0c73372bd6b85a474626185200be.png"><br>文件夹中mkspecs打开在Build type后面的linux-g++文件夹/qmake.conf<br>修改其中的QMAKE_CXXFLAGS为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu++98</span><br></pre></td></tr></table></figure>
+
+<p>如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。<br>例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ../common/linux.conf、../common/gcc-base-unix.conf、../common/g++-unix.conf 这三个文件。如果没有找到还需要递归的打开着三个文件中包含的文件。在../common/gcc-base.conf （包含在文件../common/gcc-base-unix.conf 中）文件中找到，并修改为如下所示。<br><strong><strong>本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。</strong></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QMAKE_CXXFLAGS         += $$QMAKE_CFLAGS -std=gnu++98  #gcc-base.conf文件</span><br><span class="line">QMAKE_CXX = g++ -std=gnu++98   # g++-base.conf 文件</span><br></pre></td></tr></table></figure>
+
+<p>然后再执行<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make confclean </span><br><span class="line">$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4</span><br><span class="line">$ sudo make </span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></p>
+<p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 QTDIR，将其指向 Qt 4 的安装目录。切换至 root ，打开 bash 环境配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su root </span><br><span class="line"># gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>在bashrc文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># PATH for QT4.8 </span><br><span class="line">export QTDIR=/usr/local/qt4 </span><br><span class="line">export PARH=PATH:QTDIR/bin </span><br><span class="line">export MANPATH=$QTDIR/doc/man </span><br><span class="line">export LD_LIBRARY_PATH=$QTDIR/lib</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-g-and-fortran"><a href="#2-g-and-fortran" class="headerlink" title="2 g++and fortran"></a>2 g++and fortran</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install g++</span><br><span class="line">sudo apt install gfortran</span><br></pre></td></tr></table></figure>
+
+<h2 id="bernese5-2"><a href="#bernese5-2" class="headerlink" title="bernese5.2"></a>bernese5.2</h2><p>通过 root 用户执行 Bernese 的安装引导脚本：</p>
+<p>首先给root用户设置密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd root</span><br><span class="line">输入密码，并确认密码</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>然后进入root，运行setup.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ su root</span><br><span class="line"># sh setup.sh</span><br></pre></td></tr></table></figure>
+
+<p>之后程序提示输入 Bernese 软件的安装目录，<br><strong><strong>这里的 /root 表示默认安装路径。</strong></strong> !这里有坑，显示/root为正常<br>我们将其安装到 /opt/BERN52 文件夹，因此输入：/opt。<br> 一路回车，之后，配置文件 configure.pm 被启动，并在屏幕打印以下提示：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 0 ... Complete installation (Steps 1 to 5)</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates (only after Step 1)</span><br><span class="line"> 3 ... Add a new user environment (only after Step 1)</span><br><span class="line"> 4 ... Compile the menu (only after Step 1)</span><br><span class="line"> 5 ... Compile the programs (only after Step 1)</span><br><span class="line"> 6 ... Install the example campaign (only after Step 1)</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br></pre></td></tr></table></figure></p>
+<p>解释一下此处的各个选项：<br>键入 0：执行从第 1 项至第 5 项的全部过程键入<br>1：更新环境变量设置键入<br>2：安装在线更新包键入<br>3：添加新用户环境键入<br>4：编译图形界面菜单键入<br>5：编辑程序键入<br>6：安装解算工程示例键入<br>x： 退出安装程序<br>由于存在一些坑，我们老老实实一步一步进行。键入 1，安装程序打印出支持的编译器，其中 GNU 指示到 gfortran 的路径，表明安装程序找到的了该编译器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Enter option: 1</span><br><span class="line"></span><br><span class="line">Information about compiler tests for OS LINUX:</span><br><span class="line"> 1: g95 tested at AIUB</span><br><span class="line"> 2: gfortran tested at AIUB</span><br><span class="line"> 3: ifort tested at AIUB (version 10 and 12)</span><br><span class="line"> 4: pgf90 tested at AIUB</span><br><span class="line"> 5: f90 tested at AIUB</span><br><span class="line"> 6: Use &quot;OTHER&quot; compiler from /opt/BERN52/GPS/EXE/Makefile.template</span><br><span class="line"></span><br><span class="line">Select Compiler for OS LINUX:</span><br><span class="line"> 1: G95</span><br><span class="line"> 2: GNU -&gt; /usr/bin/gfortran</span><br><span class="line"> 3: IFC</span><br><span class="line"> 4: PG_F90</span><br><span class="line"> 5: SUNF90</span><br><span class="line"> 6: OTHER</span><br><span class="line"></span><br><span class="line">Select  [2]: </span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>这里系统已经检测到了 gfortran，键入 2 选择 gfortran 编译器（也可以直接按 Enter 键回车，因为默认就是 2）。然后安装程序继续打印出当前应用的环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Current Values:</span><br><span class="line">--------------</span><br><span class="line">    VARIABLE DESCRIPTION           VARIABLE NAME      VARIABLE VALUE</span><br><span class="line"> 1: Path to software               C               =&gt; /opt/BERN52</span><br><span class="line"> 2: Path to Qt libraries           QTBERN          =&gt; /usr/local/qt4</span><br><span class="line"> 3: Operating system group         OS              =&gt; UNIX</span><br><span class="line"> 4: Operating system name          OS_NAME         =&gt; LINUX</span><br><span class="line"> 5: Fortran compiler name          F_VERS          =&gt; GNU</span><br><span class="line"> 6: List of additional compilers   F_VERS_LIST     =&gt; </span><br><span class="line"> 7: Host of the BPE server         BPE_SERVER_HOST =&gt; U1604</span><br><span class="line"> 8: Path to user environment       U               =&gt; $&#123;HOME&#125;/GPSUSER52</span><br><span class="line"> 9: Path to temp. user environment T               =&gt; $&#123;HOME&#125;/GPSTEMP</span><br><span class="line">10: Path to campaign area          P               =&gt; $&#123;HOME&#125;/GPSDATA/CAMPAIGN52</span><br><span class="line">11: Path to datapool area          D               =&gt; $&#123;HOME&#125;/GPSDATA/DATAPOOL</span><br><span class="line">12: Path to savedisk area          S               =&gt; $&#123;HOME&#125;/GPSDATA/SAVEDISK</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>解释一下此处的默认环境变量：</p>
+<p>第 1 项：Bernese 软件的安装目录<br>第 2 项：所使用的 Qt 4 所在目录<br>第 3 项：操作系统类型<br>第 4 项：操作系统名称<br>第 5 项：使用的 Fortran 编译器<br>第 6 项：其他可用的编译器<br>第 7 项： BPE 服务器<br>第 8 项：用户环境目录<br>第 9 项：用户临时文件缓存目录<br>第 10 项：用户解算工程文件夹<br>第 11 项：用户数据文件夹目录<br>第 12 项：解算成果目录</p>
+<p>若接受其默认的变量设置，输入 y。要修改其中的配置，输入 n，然后根据其提示，输入变量编号来配置变量。这里使用默认设置，输入 y。随后安装程序将检测是否存在所需的文件夹，当提示某个文件夹不存在时，程序提示是否创建，键入 y 创建即可。<br><strong><strong>坑1</strong></strong> 进行到第三步时重新打开终端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/BERN52</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ld -v</span><br><span class="line">GNU ld (GNU Binutils for Ubuntu) 2.30</span><br></pre></td></tr></table></figure>
+
+<p>版本大于 2.22，需要修改 BERN52/MENU/memu.pro 中的内容。<br>打开该文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gedit /opt/BERN52/MENU/menu.pro</span><br></pre></td></tr></table></figure>
+
+<p>去掉前面的##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##QMAKE_LIBS += -lz</span><br></pre></td></tr></table></figure>
+
+<p>保存后退出。然后，回到原终端，按 3 添加新用户环境。<br><strong><strong>坑2</strong></strong> 进行到第五步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">若提示 Fortran 程序编译至 100/100 时出错，返回安装程序引导</span><br></pre></td></tr></table></figure>
+
+<p>是安装文件没有权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt</span><br><span class="line">sudo chmod 755 -R BERN52</span><br></pre></td></tr></table></figure>
+
+<p>继续安装，直至提示安装成功。</p>
+<h3 id="添加普通用户"><a href="#添加普通用户" class="headerlink" title="添加普通用户"></a>添加普通用户</h3><p>使用 root 用户进行数据解算操作既不方便也不安全。为了让非 root 用户也能使用 Bernese，需要使用新用户加载环境变量设置文件，并启动配置程序。按 3 继续，若不慎将终端关闭，新开终端中执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ source /opt/BERN52/GPS/EXE/LOADGPS.setvar</span><br><span class="line">$ perl /opt/BERN52/GPS/EXE/configure.pm</span><br></pre></td></tr></table></figure>
+
+<p>程序再次打印出安装提示，此时键入 3，根据程序提示添加新用户的环境变量即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">==========================================</span><br><span class="line">CONFIGURATION OF THE BERNESE GNSS SOFTWARE</span><br><span class="line">==========================================</span><br><span class="line"> 1 ... Update LOADGPS.setvar</span><br><span class="line"> 2 ... Install online updates</span><br><span class="line"> 3 ... Add a new user environment</span><br><span class="line"> 4 ... Compile the menu</span><br><span class="line"> 5 ... Compile the programs</span><br><span class="line"> 6 ... Install the example campaign</span><br><span class="line"> 7 ...   ---</span><br><span class="line"></span><br><span class="line"> x ... Exit</span><br><span class="line"></span><br><span class="line">Enter option: 3</span><br><span class="line"></span><br><span class="line">Create user environment /home/xxx/GPSUSER52 (y/n): y</span><br><span class="line"></span><br><span class="line">Copying menu and program input files...</span><br><span class="line">Copying BPE user scripts...</span><br><span class="line">Copying examples for process control files...</span><br><span class="line">Copying BPE options for processing examples...</span><br><span class="line">Copying ICONS ...</span><br><span class="line">Extracting ICONS ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**********************************************************************</span><br><span class="line">* User area /home/spacefan/GPSUSER52</span><br><span class="line">* has been added/updated.</span><br><span class="line">**********************************************************************</span><br><span class="line"></span><br><span class="line">注意：此步是在普通用户模式下进行的操作，而非 root 用户。</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>Installation of the Example campaign has been finished</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ATTENTION:</span><br><span class="line">When you are going to run them, please make sure that your</span><br><span class="line">user scripts are still not modified.</span><br><span class="line"> ### Executable CRX2RNX is missing!</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>为了在每次开机后都能直接使用 Bernese 软件，需要配置在系统启动时自动加载环境变量。编辑用户主文件夹内的配置文件（root 下的配置文件也可以一并添加了）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>在文件末尾为 Bernese 加载环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Load environment variables for Bernese GNSS Software</span><br><span class="line">source /opt/BERN52/GPS/EXE/LOADGPS.setvar</span><br></pre></td></tr></table></figure>
+
+<p>从 /root 目录将 GPSDATA 拷贝到普通用户目录 /home/spacefan，再为其添加普通用户权限即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R  geoyxd /home/geoyxd/GPSDATA</span><br></pre></td></tr></table></figure>
+
+<h3 id="卸载qt4"><a href="#卸载qt4" class="headerlink" title="卸载qt4"></a>卸载qt4</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge libqt4-[a-z]*</span><br></pre></td></tr></table></figure>
+
+<p>4 结束语</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>1 <a href="http://blog.sciencenet.cn/home.php?mod=space&uid=1094854&do=blog&quickforward=1&id=863531" target="_blank" rel="noopener">BERNESE5.2 linux 安装</a></li>
+<li>2 <a href="https://blog.csdn.net/spacefan/article/details/94559873" target="_blank" rel="noopener">Bernese 5.2 + Ubuntu 16.04 编译安装完全指南</a></li>
+<li>3 <a href="http://blog.sciencenet.cn/home.phpmod=space&uid=3379275&do=blog&quickforward=1&id=1183495" target="_blank" rel="noopener">Windows安装虚拟机-Centos7；fortran及Qt4.8.4, BERNESE5.2 linux下安装步骤</a></li>
+<li>4 <a href="https://blog.csdn.net/weixin_38311046/article/details/99681240" target="_blank" rel="noopener">Ubuntu18.04 搭建 OpenGL+Qt 4.8.6 的开发环境</a></li>
+</ul>
+<hr>
+
+            <br />
+            <p class="meta">
+                
+
+<a href="/tags/bernese/"> <i class="fas fa-tags"></i>
+    bernese </a>
+
+            </p>
+        </div>
+
+        <div class="col-sm-3">
+             
+<span><b> TL;DR</b></span>
+<p>
+	Yet another hexo theme.
+</p>
+<hr />
+
+
+<span><b> TL;DR 2</b></span>
+<p>
+	No, not another one :/
+</p>
+<hr />
+
+ 
+
+<span
+	><a href="https://twitter.com/hexojs" target="_blank" rel="noopener"
+		><b
+			><i class="fab fa-twitter-square"></i>
+			<i class="fas fa-at"></i>
+			hexojs</b
+		></a
+	></span
+>
+<br />
+<a class="twitter-timeline" data-height="800" data-dnt="true" data-chrome="nofooter transparent noheader noborders " href="https://twitter.com/hexojs?ref_src=twsrc%5Etfw"></a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+        </div>
+    </div>
+</div>
+<!-- Menu fade on scroll -->
+<script>
+    var isScrolling;
+    var prevScrollpos = window.pageYOffset;
+    window.addEventListener(
+        'scroll',
+        function(event) {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    $('#navbar').slideDown();
+                } else {
+                    $('#navbar').slideUp();
+                }
+                prevScrollpos = currentScrollPos;
+            }, 66);
+        },
+        false
+    );
+</script>
+
+
+<a class="float-left gradient btn paginationbtn" href="/2019/12/21/my_2019/"><i class="fas fa-chevron-left"></i></a>
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer">
+  <div class="container">
+    <div class="social-icons">
+      
+      <a href="https://hexo.io/" title="Hexo.io" target="_blank" rel="noopener" class="fas fa-home"></a>
+      
+      <a href="https://twitter.com/hexojs" title="@hexojs" target="_blank" rel="noopener" class="fab fa-twitter"></a>
+      
+      <a href="https://github.com/RandomAdversary/Gradient/issues" title="Report issue" target="_blank" rel="noopener" class="fas fa-bug"></a>
+      
+    </div>
+  </div>
+</footer>
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
