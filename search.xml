@@ -100,22 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的2019</title>
-    <url>/2019/12/21/my_2019/</url>
-    <content><![CDATA[<hr>
-<p>2019</p>
-<a id="more"></a>
-
-
-]]></content>
-      <categories>
-        <category>胡言乱语</category>
-      </categories>
-      <tags>
-        <tag>胡言乱语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GAMIT软件安装</title>
     <url>/2019/10/21/gamit-install/</url>
     <content><![CDATA[<p>在Elementary OS 5 Juno是基于最新版本的Ubuntu，其平台上安装gamit无法成功，是gcc、gFortran版本太高的原因，解决方式如下：</p>
@@ -134,30 +118,6 @@
       <tags>
         <tag>gamit</tag>
         <tag>Test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/08/25/hello-world/</url>
-    <content><![CDATA[<p>Hello World ！！！</p>
-<p>geoyxd.site终于诞生了<br>期间用过蚂蚁笔记的博客<br>简书、微信公众号<br>体验都不是很好</p>
-<p>geoyxd.site域名买了10年<br>致力于分享测绘技术、相关软件、编程语言</p>
-<p>欢迎关注本博客<br>欢迎向本博客投稿</p>
-]]></content>
-      <categories>
-        <category>胡言乱语 - 搭建博客</category>
-      </categories>
-      <tags>
-        <tag>Test</tag>
-        <tag>搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于</title>
-    <url>/2019/08/21/%E5%85%B3%E4%BA%8E/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>关于</tag>
       </tags>
   </entry>
 </search>
